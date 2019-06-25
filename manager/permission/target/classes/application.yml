@@ -1,0 +1,35 @@
+server:
+  port: 8081
+#  servlet:
+#    context-path: /permission
+
+spring:
+  # 使用指定的配置文件
+  profiles:
+    active: dev
+  ### THYMELEAF (THYMELEAF AutoConfiguration)
+  thymeleaf:
+    mode: HTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    cache: false
+
+#公共配置与profiles选择无关 mapperLocations指的路径是src/main/resources
+mybatis:
+  type-aliases-package: com.xcl.permission.apply.**.model
+  mapper-locations: mapper/**/*Mapper.xml
+  config-location: classpath:config/sqlMapConfig.xml
+
+#keycloak 服务配置
+keycloak:
+  auth-server-url: http://192.168.52.170:9001
+  realm: realmTest
+  public-client: true
+  bearer-only: true
+  ssl-required: external
+  resource: realmTestClient
+  use-resource-role-mappings: true
+  principal-attribute: preferred_username
+
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+  PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+  <settings>
+    <setting name="logImpl" value="STDOUT_LOGGING"/>
+    <setting name="localCacheScope" value="SESSION"/>
+    <setting name="jdbcTypeForNull" value="NULL"/>
+    <setting name="cacheEnabled" value="true"/>
+    <setting name="lazyLoadingEnabled" value="true"/>
+    <setting name="aggressiveLazyLoading" value="true"/>
+  </settings>
+  <typeAliases>
+    <typeAlias type="com.xcl.keycloakservice.apply.user.model.User" alias="User"/>
+    <typeAlias type="com.xcl.keycloakservice.apply.rolse.model.Role" alias="Rolse"/>
+    <typeAlias type="com.xcl.keycloakservice.apply.realm.model.Realm" alias="Realm"/>
+    <typeAlias type="com.xcl.keycloakservice.apply.client.model.Client" alias="Client"/>
+  </typeAliases>
+</configuration>

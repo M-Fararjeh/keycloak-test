@@ -1,0 +1,17 @@
+server:
+  port: 8081
+#  servlet:
+#    context-path: /permission
+
+#keycloak 服务配置
+keycloak:
+  auth-server-url: http://192.168.52.170:9001
+  realm: realmTest
+  public-client: true
+  bearer-only: true
+  ssl-required: external
+  resource: realmTestClient
+  use-resource-role-mappings: true
+  principal-attribute: preferred_username
+
+

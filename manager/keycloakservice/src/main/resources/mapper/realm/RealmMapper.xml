@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC
+  "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--当你的namespace绑定接口后，
+你可以不用写接口实现类，
+mybatis会通过该绑定自动帮你找到对应要执行的SQL语句
+接口中的方法与映射文件中的SQL语句一一对应
+则在代码中可以直接使用 具体dao接口 面向接口编程而不需要再编写实现类-->
+<mapper namespace="com.xcl.keycloakservice.apply.realm.dao.RealmDao">
+  <select id="queryAll" resultType="Realm">
+    select
+        realm_id,realm_name,realm_description,DATE_FORMAT(create_time,'%Y-%m-%d %H:%i:%s') create_time
+    from realm
+    where 1 = 1
+  </select>
+</mapper>

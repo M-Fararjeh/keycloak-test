@@ -1,0 +1,32 @@
+spring:
+  datasource:
+    #配置当前要使用的数据源的操作类型那个
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://192.168.52.140:3306/permission?useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=true
+    username: root
+    password: xcl!0615
+  # redis 配置信息
+  redis:
+    cluster:
+      nodes: 192.168.52.14:7000,192.168.52.14:7001,192.168.52.14:7002,192.168.52.14:7003,192.168.52.14:7004,192.168.52.14:7005
+      max-redirects: 3
+    timeout: 60000s
+    jedis:
+      pool:
+        max-active: 300
+        max-wait: -1s
+        max-idle: 100
+        min-idle: 20
+
+#redis 命名空间
+redis:
+  key-prefix: keycloakservice_
+#过滤器不拦截的 url
+passUrl: /login,/logout,/register,/main/excludefilter
+sso-token-name: ssotoken
+
+hdfs:
+  path: hdfs://10.126.29.166:9000
+  username: hadoop
+
